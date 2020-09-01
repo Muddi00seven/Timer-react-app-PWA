@@ -58,20 +58,54 @@ const TimerClock = () => {
         <>
         <div>
             <div>
+            <div>
                 <h3>STOP WATCH</h3>
             </div>
             <div>
-                <span></span>
+                <span>{(time.m >= 10) ? time.m: '0' + time.m}</span>
                 <span>Minutes</span>
             </div>
             <div>
-                <span></span>
+                <span>{(time.s >= 10) ? time.s: '0' + time.s}</span>
                 <span>Seconds</span>
             </div>
             <div>
-                <span></span>
+                <span>{(time.ms >= 10) ? time.ms: '0' + time.ms}</span>
                 <span>Milli-Seconds</span>
             </div>
+            </div>
+        <div>
+            {
+                (timerStatus === 0) ?
+                <button onClick={start}>Start</button> : ''
+            }
+
+            {
+                (timerStatus === 1) ? 
+                <div>
+                    <button onClick={stop}>
+                        stop
+                    </button>
+                    <button onClick={reset}>
+                        reset
+                    </button>
+                </div>
+                :''
+            }
+
+            {
+                (timerStatus === 2) ?
+                <div>
+                <button onClick={resume}>
+                    resume
+                </button>
+                <button onClick={reset}>
+                    reset
+                </button>
+            </div>
+            :''
+            }
+        </div>
         </div>
         </>
     )

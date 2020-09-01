@@ -15,3 +15,5 @@ describe('TimerClock', () => {
     })
 
 })
+
+// npm run test
