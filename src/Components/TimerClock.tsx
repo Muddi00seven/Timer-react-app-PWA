@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import './TimerTest.css'
 
 const TimerClock = () => {
     const [time, setTIme] = useState({ m: 0 , s : 0, ms: 0});
@@ -57,10 +58,11 @@ const TimerClock = () => {
     return (
         <>
         <div>
-            <div>
+            
             <div>
                 <h3>STOP WATCH</h3>
             </div>
+            <div className="watch-items">
             <div>
                 <span>{(time.m >= 10) ? time.m: '0' + time.m}</span>
                 <span>Minutes</span>
