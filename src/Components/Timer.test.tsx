@@ -10,10 +10,16 @@ describe('TimerClock', () => {
     it('it should be render Timer Clock' , () => {
         shallow(<TimerClock/>)
     });
-    it('should be render DIV', () => {
+    it('should render DIV', () => {
         expect(wrapper.find('div').length).toBeGreaterThan(2)
-    })
-
+    });
+    it('should render buttons', () => {
+        expect(wrapper.find('button').length).toBeLessThanOrEqual(6)
+    });
+    it('should click button' , () => {
+        expect(wrapper.find('button').simulate('click'))
+    });
 })
+
 
 // npm run test
