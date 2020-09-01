@@ -11,18 +11,40 @@ const TimerClock = () => {
         setTImeInterval(setInterval(run, 10))
     }
 
-    let updateM = time.m;
-    let updateS = time.s ;
-    let updateMs = time.ms;
+    var updateM = time.m;
+    var updateS = time.s ;
+    var updateMs = time.ms;
 
     const run = () =>{
         if(updateS === 60 ){
             updateM++;
             updateS = 0;
-
         }
-    
+        if(updateMs === 1000) {
+            updateS++;
+            updateMs = 0
+        }
+        updateM++;
+         return setTIme({ m: updateM,
+                s: updateS,
+                ms: updateMs
+                        })
     }
+
+    const stop = () => {
+        clearInterval(timeInterval);
+        setTimeStatus(2);
+    }
+
+    const reset = () =>{
+        clearInterval(timeInterval);
+        setTimeStatus(0);
+        setTIme({m : 0 ,
+                 s : 0,
+                 ms: 0
+                })
+    }
+
     return (
         <div>
             
