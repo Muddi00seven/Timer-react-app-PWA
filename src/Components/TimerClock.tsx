@@ -57,26 +57,26 @@ const TimerClock = () => {
 
     return (
         <>
-        <div>
+        <div className="timer">
             
-            <div>
+            <div className="heading">
                 <h3>STOP WATCH</h3>
             </div>
-            <div className="watch-items">
-            <div>
-                <span>{(time.m >= 10) ? time.m: '0' + time.m}</span>
-                <span>Minutes</span>
+            <div className="display-timer timer-flex">
+            <div className="minuetes">
+                <span className="timer-num one"> {(time.m >= 10) ? time.m: '0' + time.m}</span>
+                <span className="timer-text one1"> Minutes</span>
             </div>
-            <div>
-                <span>{(time.s >= 10) ? time.s: '0' + time.s}</span>
-                <span>Seconds</span>
+            <div className="seconds">
+                <span className="timer-num"> {(time.s >= 10) ? time.s: '0' + time.s}</span>
+                <span className="timer-text"> Seconds</span>
             </div>
-            <div>
-                <span>{(time.ms >= 10) ? time.ms: '0' + time.ms}</span>
-                <span>Milli-Seconds</span>
+            <div className="mseconds">
+                <span className="timer-num two"> {(time.ms >= 10) ? time.ms: '0' + time.ms}</span>
+                <span className="timer-text two2"> Milli-Seconds</span>
             </div>
             </div>
-        <div>
+        <div className="btn-div">
             {
                 (timerStatus === 0) ?
                 <button onClick={start}>Start</button> : ''
@@ -84,7 +84,7 @@ const TimerClock = () => {
 
             {
                 (timerStatus === 1) ? 
-                <div>
+                <div className="">
                     <button onClick={stop}>
                         stop
                     </button>
@@ -97,7 +97,7 @@ const TimerClock = () => {
 
             {
                 (timerStatus === 2) ?
-                <div>
+                <div className="">
                 <button onClick={resume}>
                     resume
                 </button>
