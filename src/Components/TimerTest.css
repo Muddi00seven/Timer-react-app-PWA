@@ -79,3 +79,32 @@
     background-color: #df3030;
 }
 
+
+.heading{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 28px;
+    color: red;
+    margin: auto;
+}
+.image{
+    height: 100px;
+}
+
+.image-container{
+    display: flex;
+
+}
+
+
+@media all and (max-width: 480px) { 
+        .timer-flex div span{
+        display: block;
+        width: 100px;
+        height: 80px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, .5);
+    }
+}

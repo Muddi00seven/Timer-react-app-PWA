@@ -61,6 +61,7 @@ const TimerClock = () => {
             
             <div className="heading">
                 <h3>STOP WATCH</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Clock.gif" alt="gifi" className="image"/>
             </div>
             <div className="display-timer timer-flex">
             <div className="minuetes">
