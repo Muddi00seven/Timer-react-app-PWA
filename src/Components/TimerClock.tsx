@@ -23,11 +23,11 @@ const TimerClock = () => {
             updateM++;
             updateS = 0;
         }
-        if(updateMs === 1000) {
+        if(updateMs === 100) {
             updateS++;
             updateMs = 0
         }
-        updateM++;
+        updateMs++;
          return setTIme({ m: updateM,
                 s: updateS,
                 ms: updateMs
@@ -61,11 +61,19 @@ const TimerClock = () => {
             
             <div className="heading">
                 <h3>STOP WATCH</h3>
+                
+  {
+                (timerStatus === 1) ? 
+                <div className="">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Clock.gif" alt="gifi" className="image"/>
+
+                </div>
+                :''
+            }
             </div>
             <div className="display-timer timer-flex">
             <div className="minuetes">
-                <span className="timer-num one"> {(time.m >= 10) ? time.m: '0' + time.m}</span>
+                <span className="timer-num one">{(time.m >= 10) ? time.m: '0' + time.m} </span>
                 <span className="timer-text one1"> Minutes</span>
             </div>
             <div className="seconds">
@@ -73,7 +81,7 @@ const TimerClock = () => {
                 <span className="timer-text"> Seconds</span>
             </div>
             <div className="mseconds">
-                <span className="timer-num two"> {(time.ms >= 10) ? time.ms: '0' + time.ms}</span>
+                <span className="timer-num two">{(time.ms >= 10) ? time.ms: '0' + time.ms} </span>
                 <span className="timer-text two2"> Milli-Seconds</span>
             </div>
             </div>
